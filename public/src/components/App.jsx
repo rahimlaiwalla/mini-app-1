@@ -1,5 +1,7 @@
 import React from 'react';
-import Axios from 'axios';
+// import ReactPaginate from 'react-paginate';
+import SearchBar from './SearchBar.jsx';
+// import Axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +12,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>React is Working</div>
+      <div>
+        <h1>Historical Events Finder</h1>
+        <SearchBar />
+      </div>
     );
   }
 }

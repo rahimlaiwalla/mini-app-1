@@ -1,20 +1,20 @@
 const path = require('path');
 // index.jsx is my source
-const src_path = path.join(__dirname, '/public/src');
+const srcPath = path.join(__dirname, '/public/src');
 // want bundle to go into public/dist
-const dist_path = path.join(__dirname, '/public/dist');
+const distPath = path.join(__dirname, '/public/dist');
 
 module.exports = {
-  entry: `${src_path}/index.jsx`,
+  entry: `${srcPath}/index.jsx`,
   output: {
     filename: 'bundle.js',
-    path: `${dist_path}`,
+    path: `${distPath}`,
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        include: src_path,
+        include: srcPath,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

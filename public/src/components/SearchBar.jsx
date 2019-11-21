@@ -73,7 +73,7 @@ class SearchBar extends React.Component {
     Axios.get(`/events?q=${request}&_page=${this.state.pageNumber}`)
       .then((response) => {
         let totalCount = response.headers['x-total-count'];
-        let lastPage = Math.floor(totalCount/10 + 1);
+        let lastPage = Math.ceil(totalCount/10);
         this.setState({ events: response.data, pageNumber: this.state.pageNumber + 1, lastPage: lastPage }, () => {
           console.log('response: ', response);
           console.log('next page number: ', this.state.pageNumber);
